@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setting up
+      - name: Prepare environment
         run: |
            git config --global user.name ${GITHUB_ACTOR}
            git config --global user.email ${GITHUB_ACTOR}@users.noreply.github.com
       - uses: actions/checkout@v2
-      - name: Use Node.js 12
+      - name: Install Node.js 12
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
@@ -29,4 +29,6 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-node_modules
       - name: Deploy
+        env:
+          CI: false
         run: yarn run deploy
