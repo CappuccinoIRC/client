@@ -13,16 +13,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 12
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
       - name: Install dependencies.
-        run: npm install
+        run: yarn install
       - name: Cache
         uses: actions/cache@v2.1.4
         with:
           path: node_modules
           key: ${{ runner.os }}-node_modules
       - name: Deploy
-        run: npm run deploy
+        run: yarn run deploy
