@@ -1,0 +1,70 @@
+@import "../../responsive";
+
+.appbar-light {
+  @extend .appbar;
+
+  background-color: #eee;
+}
+
+.appbar-nav-light svg {
+  color: #333; // TODO: Delegate to theme.
+
+  &:hover {
+    color: #000; // TODO: Delegate to theme.
+  }
+}
+
+.brand-light {
+  @extend .brand;
+
+  color: #333;
+}
+
+.profile-light {
+  @extend .profile;
+
+  color: #eee;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.profile-light span {
+  color: #333; // TODO: Delegate to theme.
+
+  &:hover {
+    color: #000; // TODO: Delegate to theme.
+  }
+}
+
+.mobile-nav {
+  display: none !important;
+}
+
+.mobile-nav.active {
+  @include mobile() {
+    display: block;
+    height: 100vh;
+    background-color: #ddd;
+    z-index: 2;
+    transition: .75s;
+  }
+}
+
+.mobile-nav.active li {
+  @include mobile() {
+    //width: 100%;
+    background-color: darken(#ddd, 5%);
+    color: #333;
+    text-align: center;
+  }
+}
+
+.mobile-nav.active li:hover,
+.mobile-nav.active li:focus {
+  @include mobile() {
+    background-color: darken(#ddd, 10%);
+    color: #333;
+  }
+}

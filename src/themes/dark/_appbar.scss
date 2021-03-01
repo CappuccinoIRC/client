@@ -1,0 +1,70 @@
+@import "../../responsive";
+
+.appbar-dark {
+  @extend .appbar;
+
+  background-color: #333;
+}
+
+.appbar-nav-dark svg {
+  color: #ddd; // TODO: Delegate to theme.
+
+  &:hover {
+    color: #fff; // TODO: Delegate to theme.
+  }
+}
+
+.brand-dark {
+  @extend .brand;
+
+  color: #fff;
+}
+
+.profile-dark {
+  @extend .profile;
+
+  color: #666;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.profile-dark span {
+  color: #ddd; // TODO: Delegate to theme.
+
+  &:hover {
+    color: #fff; // TODO: Delegate to theme.
+  }
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav.active {
+  @include mobile() {
+    display: block;
+    height: 100vh;
+    background-color: #333;
+    z-index: 2;
+    transition: .75s;
+  }
+}
+
+.mobile-nav.active li {
+  @include mobile() {
+    //width: 100%;
+    background-color: darken(#333, 5%);
+    color: #ddd;
+    text-align: center;
+  }
+}
+
+.mobile-nav.active li:hover,
+.mobile-nav.active li:focus {
+  @include mobile() {
+    background-color: darken(#333, 10%);
+    color: #fff;
+  }
+}

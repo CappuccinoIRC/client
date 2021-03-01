@@ -1,0 +1,7 @@
+.chat-box-light {
+  @extend .chat-box;
+
+  background-color: #ecf0f1;
+  color: #333;
+  border: 1px solid #000;
+}

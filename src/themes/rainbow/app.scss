@@ -1,0 +1,15 @@
+@import "../base";
+
+.appbar-rainbow {
+  @extend .appbar;
+
+  background-color: #FF0000;
+}
+
+.brand-rainbow {
+  @extend .brand;
+}
+
+.profile-rainbow {
+  @extend .profile;
+}

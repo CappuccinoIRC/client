@@ -1,0 +1,207 @@
+@import '../responsive';
+
+.appbar {
+  width: 100%;
+  height: 80px;
+  padding: 20px 25px;
+
+  @include mobile() {
+    text-align: center;
+  }
+}
+
+.appbar-nav {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px auto;
+  list-style: none;
+
+  // Hide mobile only nav-items by default.
+  li ~ [data-target='mobile'] {
+    display: none !important;
+  }
+
+  @include mobile() {
+    li {
+      display: none;
+    }
+
+    li ~ [data-target='mobile'] {
+      display: block !important;
+      position: absolute !important;
+      right: 5px !important;
+
+    }
+  }
+}
+
+.mobile-nav.active {
+  margin-top: 75px;
+  z-index: 999 !important;
+}
+
+.mobile-nav.active li {
+  display: flex !important;
+  flex-direction: column;
+  width: 100vw;
+  height: 10vh;
+  padding: 10px;
+}
+
+.mobile-nav.active button {
+  width: 100vw;
+  height: 100vh;
+  color: #ddd;
+  padding-right: 10%;
+}
+
+.mobile-nav.active button:hover,
+.mobile-nav.active button:focus {
+  color: #fff;
+}
+
+.appbar-nav svg {
+  width: 48px;
+  height: 48px;
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+
+  @include mobile() {
+    position: absolute;
+    left: 20px;
+  }
+}
+
+.profile {
+}
+
+.profile span {
+  line-height: 70px;
+  margin-right: 5px;
+}
+
+.profile img {
+  float: right;
+  margin: 10px auto;
+}
+
+.chat-box {
+  position: absolute;
+  top: 105px;
+  left: 125px;
+  bottom: 90px;
+  right: 20px;
+
+  border-radius: 10px;
+  padding: 10px;
+
+  @include mobile() {
+    left: 15px;
+    right: 15px;
+  }
+}
+
+.message-box {
+  position: absolute;
+  bottom: 10px;
+  left: 125px;
+
+  @include mobile() {
+    left: 5px !important;
+    right: 5px !important;
+  }
+}
+
+.message-box input {
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 85vw;
+  height: 60px;
+  //background-color: #434343; // TODO: Delegate to theme.
+  //color: #BBB; // TODO: Delegate to theme.
+  //border: 1px solid #000; // TODO: Delegate to theme.
+  border-radius: 10px;
+  padding: 5px 20px;
+  outline: none;
+  font-size: 1.1rem;
+
+  @include mobile() {
+    position: absolute;
+    bottom: 0 !important;
+    left: 10px !important;
+    right: 10px !important;
+    width: calc(100vw - 30px) !important;
+  }
+}
+
+.message-box button {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  height: 60px;
+  width: 250px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  //background-color: #6200EE !important; // TODO: Delegate to theme.
+  //color: #fff; // TODO: Delegate to theme.
+  //border: 1px solid #000; // TODO: Delegate to theme.
+  z-index: 1;
+
+  @include mobile() {
+    display: none;
+  }
+}
+
+.sidebar {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 100%;
+  //background-color: rgba(50, 50, 50, 0.5); // TODO: Delegate to theme.
+
+  @include mobile() {
+    display: none;
+  }
+}
+
+.sidebar button {
+  position: fixed;
+  bottom: 5px !important;
+  left: -10px; // TODO: Change when themes are implemented.
+}
+
+.sidebar button svg {
+  width: 48px;
+  height: 48px;
+}
+
+.theme-switcher {
+  position: fixed !important;
+  bottom: 10px;
+  left: 20px;
+  transform: scale(1.5);
+}
+
+.theme-switcher * {
+  transition: .25s !important;
+}
+
+// TODO: Possibly delegate to theme, could be universal though.
+.theme-icon-light {
+  color: #f39c12;
+}
+
+// TODO: Possibly delegate to theme, could be universal though.
+.theme-icon-dark {
+  color: #ffeb96;
+}

@@ -1,0 +1,24 @@
+$breakpoints: (
+        'sm': 576px,
+        'md': 768px,
+        'lg': 992px,
+        'xl': 1200px
+) !default;
+
+@mixin mobile() {
+  @media only screen and (max-width: map_get($breakpoints, 'md')) {
+    @content
+  }
+}
+
+@mixin tablet() {
+  @media only screen and (min-width: map_get($breakpoints, 'md')) {
+    @content
+  }
+}
+
+@mixin desktop() {
+  @media only screen and (min-width: map_get($breakpoints, 'lg') ) {
+    @content
+  }
+}

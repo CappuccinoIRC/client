@@ -1,0 +1,7 @@
+.chat-box-dark {
+  @extend .chat-box;
+
+  background-color: #444;
+  color: #ecf0f1;
+  border: 1px solid #000;
+}
