@@ -2,6 +2,7 @@ import React from 'react';
 
 import {Button} from "@material-ui/core";
 import {ThemeConsumer, ThemeContextDescriptor} from "../contexts/ThemeContext";
+import Cookies from "js-cookie";
 
 const Messagebox = () => {
     // Easter-egg
@@ -9,7 +10,7 @@ const Messagebox = () => {
         if ((e.target.value === '#EASTEREGG ON') && cxt.theme !== 'rainbow') {
             cxt.setTheme('rainbow');
         } else if (e.target.value === '#EASTEREGG OFF' && cxt.theme === 'rainbow') {
-            cxt.setTheme(sessionStorage.getItem('x-last-theme')!!);
+            cxt.setTheme(Cookies.get('x-cappuccino-last-theme')!!);
         }
     }
 

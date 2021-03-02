@@ -6,6 +6,10 @@ import Appbar from "./components/Appbar";
 import Chatbox from "./components/Chatbox";
 import Messagebox from "./components/Messagebox";
 import {ThemeProvider} from "./contexts/ThemeContext";
+import Cookies from "js-cookie";
+
+export const X_LAST_THEME = 'x-cappuccino-last-theme';
+export const X_THEME = 'x-cappuccino-theme';
 
 const App = () => {
     const [
@@ -17,10 +21,10 @@ const App = () => {
     ] = React.useState('light');
 
     React.useEffect(() => {
-        const _theme = sessionStorage.getItem('x-theme');
+        let _theme = Cookies.get(X_THEME);
 
         if (_theme === null) {
-            sessionStorage.setItem('x-theme', theme);
+            Cookies.set(X_THEME, theme);
             return;
         }
 
@@ -28,8 +32,8 @@ const App = () => {
     }, []);
 
     React.useEffect(() => {
-        sessionStorage.setItem('x-last-theme', sessionStorage.getItem('x-theme')!!);
-        sessionStorage.setItem('x-theme', theme);
+        Cookies.set(X_LAST_THEME, Cookies.get(X_THEME)!!);
+        Cookies.set(X_THEME, theme);
 
         try {
             import(`./themes/${theme}/app.scss`);
