@@ -4,9 +4,13 @@ import MoonIcon from '@material-ui/icons/Brightness1';
 import SunIcon from '@material-ui/icons/Brightness7';
 
 import {Switch} from "@material-ui/core";
-import {ThemeConsumer} from "../contexts/ThemeContext";
+import {ThemeConsumer, ThemeContextDescriptor} from "../contexts/ThemeContext";
 
 const Sidebar = () => {
+    function toggleTheme(cxt: ThemeContextDescriptor) {
+        cxt.setTheme(cxt.theme === 'light' ? 'dark' : 'light');
+    }
+
     return (
         <>
             <ThemeConsumer>
@@ -24,7 +28,7 @@ const Sidebar = () => {
                                 disableFocusRipple
                                 disableTouchRipple
                                 checked={cxt.theme === 'light'}
-                                onClick={e => cxt.toggleTheme()}
+                                onClick={e => toggleTheme(cxt)}
                         />
                     </div>
                 )}

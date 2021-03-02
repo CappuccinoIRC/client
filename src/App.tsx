@@ -14,10 +14,7 @@ export const X_THEME = 'x-cappuccino-theme';
 const App = () => {
     const [
         theme,
-        setTheme,
-        toggleTheme = () => {
-            setTheme(theme === 'light' ? 'dark' : 'light');
-        }
+        setTheme
     ] = React.useState('light');
 
     React.useEffect(() => {
@@ -44,7 +41,7 @@ const App = () => {
 
     return (
         <>
-            <ThemeProvider value={{theme, setTheme, toggleTheme}}>
+            <ThemeProvider value={{theme, setTheme}}>
                 <header>
                     <Appbar/>
                 </header>
