@@ -32,12 +32,23 @@ const App = () => {
         Cookies.set(X_LAST_THEME, Cookies.get(X_THEME)!!);
         Cookies.set(X_THEME, theme);
 
-        try {
-            import(`./themes/${theme}/app.scss`);
-        } catch (e) {
-            console.warn('Theme is not present.');
-        }
+        // try {
+        //     import(`./themes/${theme}/app.scss`);
+        // } catch (e) {
+        //     console.warn('Theme is not present.');
+        // }
     }, [theme]);
+
+    React.useEffect(() => {
+        const socket = new WebSocket('ws://127.0.0.1:8000');
+
+        socket.onopen = (e) => {
+            console.log('Connection established: ', e);
+            socket.send('Hello.');
+        };
+        socket.onerror = (e) => console.warn('Got an error: ', e);
+        socket.onmessage = (e) => console.log('Got a message: ', e.data);
+    }, []);
 
     return (
         <>
