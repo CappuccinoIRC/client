@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { Header, Nav, NavItem } from './partials';
+import {Header, Nav, NavItem} from './partials';
 
 import './App.scss';
 
-export function App() {
+export default () => {
     return (
         <>
             <Header>
                 <Nav position={"left"}>
-                    <NavItem><h3><a href="#">CappuccinoIRC</a></h3></NavItem>
+                    <NavItem><h3><a href="#" className={'nav-brand'}>CappuccinoIRC</a></h3></NavItem>
                 </Nav>
 
                 <Nav position={"right"}>
@@ -20,6 +20,4 @@ export function App() {
             </Header>
         </>
     );
-}
-
-export default App;
+};

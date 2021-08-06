@@ -43,6 +43,10 @@
   }
 }
 
+.nav-brand {
+  font-size: 1.25em;
+}
+
 .nav-link {
   &:hover, &:focus {
     &::after {
