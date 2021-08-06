@@ -1,1 +1,1 @@
-## CappuccinoIRC - client
+## CappuccinoIRC - Client
