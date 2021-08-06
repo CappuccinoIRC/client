@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Header from './partials/Header';
-import Nav from './partials/Nav';
-import NavItem from './partials/NavItem';
+import { Header, Nav, NavItem } from './partials';
 
 import './App.scss';
 
