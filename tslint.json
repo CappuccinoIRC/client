@@ -1,7 +1,10 @@
 {
+  "extends": [
+    "react"
+  ],
   "linterOptions": {
     "exclude": [
-      'node_modules/**'
+      "node_modules/**"
     ]
   },
   "rules": {
@@ -16,17 +19,29 @@
       "check-rest-spread",
       "check-type",
       "check-typecast",
-      "check-type-operator",
-      "check-preblock",
-      "check-postbrace"
+      "check-type-operator"
     ],
     "semicolon": true,
     "prefer-object-spread": true,
-    "prefer-const": [true, {"destructuring": "all"}],
-    "prefer-readonly": [true, "only-inline-lambdas"],
+    "prefer-const": [
+      true,
+      {
+        "destructuring": "all"
+      }
+    ],
+    "prefer-readonly": [
+      true,
+      "only-inline-lambdas"
+    ],
     "class-name": true,
     "encoding": true,
-    "file-name-casing": [true, "pascal-case"],
+    "file-name-casing": [
+      true,
+      {
+        ".tsx": "pascal-case",
+        ".ts": "camel-case"
+      }
+    ],
     "prefer-template": true,
     "variable-name": {
       "options": [
@@ -38,6 +53,10 @@
     },
     "arrow-parens": true,
     "import-spacing": true,
-    "quotemark": [true, "single", "jsx-double"]
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ]
   }
 }
