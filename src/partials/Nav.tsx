@@ -1,4 +1,4 @@
-import React, {CSSProperties, FC} from 'react';
+import React, { FC } from 'react';
 
 type NavProps = {
     position?: 'left' | 'middle' | 'right';
@@ -11,7 +11,7 @@ const Nav: FC<NavProps> = ({position, className, children}) => {
         <ul className={`nav nav-${position} ${className}`} role={'navigation'}>
             {children}
         </ul>
-    )
-}
+    );
+};
 
 export default Nav;

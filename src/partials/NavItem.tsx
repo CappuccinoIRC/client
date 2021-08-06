@@ -1,4 +1,4 @@
-import React, {CSSProperties, FC} from 'react';
+import React, { FC } from 'react';
 
 type NavItemProps = {
     className?: string | undefined;
@@ -11,6 +11,6 @@ const NavItem: FC<NavItemProps> = ({className, children}) => {
             {children}
         </li>
     );
-}
+};
 
 export default NavItem;

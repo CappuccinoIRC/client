@@ -1,0 +1,43 @@
+{
+  "linterOptions": {
+    "exclude": [
+      'node_modules/**'
+    ]
+  },
+  "rules": {
+    "curly": true,
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-rest-spread",
+      "check-type",
+      "check-typecast",
+      "check-type-operator",
+      "check-preblock",
+      "check-postbrace"
+    ],
+    "semicolon": true,
+    "prefer-object-spread": true,
+    "prefer-const": [true, {"destructuring": "all"}],
+    "prefer-readonly": [true, "only-inline-lambdas"],
+    "class-name": true,
+    "encoding": true,
+    "file-name-casing": [true, "pascal-case"],
+    "prefer-template": true,
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "allow-leading-underscore",
+        "allow-pascal-case"
+      ]
+    },
+    "arrow-parens": true,
+    "import-spacing": true,
+    "quotemark": [true, "single", "jsx-double"]
+  }
+}
