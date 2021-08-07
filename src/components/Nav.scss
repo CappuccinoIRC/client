@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0 25px;
+
+  &-left {
+    margin-right: auto;
+  }
+
+  &-middle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-right {
+    margin-left: auto;
+  }
+}

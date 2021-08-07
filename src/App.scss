@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto&display=swap');
-
-@import "components";
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -9,7 +6,7 @@
 
 // Force font on all elements.
 * {
-  font-family: 'Lora', 'Roboto', sans-serif !important;
+  font-family: 'Lora', 'Roboto', sans-serif, serif !important;
 }
 
 html, body {
@@ -22,8 +19,18 @@ html, body {
 main {
   margin-top: 40px;
   background-color: #eee;
+  width: 100vw;
+  height: calc(100vh - 40px);
 }
 
+// ================================
+//            Scrollbar
+// ================================
 ::-webkit-scrollbar {
   width: 0;
+}
+
+// Fallback for unsupported browsers.
+* {
+  scrollbar-width: 0;
 }
