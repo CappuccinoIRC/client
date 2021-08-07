@@ -70,8 +70,8 @@
 }
 
 .sidebar {
-  width: 150px;
-  height: calc(100vmin - 4px);
+  width: 200px;
+  height: calc(100vmin - 40px);
   background: #333;
   z-index: 1;
 
@@ -86,12 +86,16 @@
 
   .nav-item {
     background: #222;
-    width: 150px;
-    height: 30px;
+    width: 200px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #555;
     cursor: pointer;
+
+    &:hover, &:focus {
+      background-color: #555;
+    }
   }
 }
