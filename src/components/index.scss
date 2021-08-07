@@ -91,12 +91,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #555;
+    border: 1px solid #555;
+    border-top: none;
     cursor: pointer;
     user-select: none;
+    z-index: 1;
 
     &:hover, &:focus {
       background-color: #555;
     }
+  }
+}
+
+.nav-item.active {
+  background-color: #ddd;
+  color: #333;
+  border: 1px solid #222;
+  z-index: 1;
+
+  &:hover, &:focus {
+    background-color: #fff;
+    color: #111;
   }
 }

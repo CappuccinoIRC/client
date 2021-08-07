@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, useLayoutEffect } from 'react';
+import $ from 'jquery';
 
 export interface INavItem {
     className?: string | undefined;
@@ -8,8 +9,17 @@ export interface INavItem {
 }
 
 export const NavItem: FC<INavItem> = ({onClick, className, children}) => {
+    function handleClick(event: any) {
+        $('.active').removeClass('active');
+        $(event.target).addClass('active');
+
+        if (onClick) {
+            onClick();
+        }
+    }
+
     return (
-        <li className={`nav-item ${className ? className : ''}`} onClick={onClick}>
+        <li className={`nav-item ${className ? className : ''}`} onClick={handleClick}>
             {children}
         </li>
     );
