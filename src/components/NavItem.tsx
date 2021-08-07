@@ -7,7 +7,7 @@ type NavItemProps = {
 
 const NavItem: FC<NavItemProps> = ({className, children}) => {
     return (
-        <li className={`nav-item ${className}`}>
+        <li className={`nav-item ${className ? className : ''}`}>
             {children}
         </li>
     );

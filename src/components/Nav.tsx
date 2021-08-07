@@ -8,7 +8,7 @@ type NavProps = {
 
 const Nav: FC<NavProps> = ({position, className, children}) => {
     return (
-        <ul className={`nav nav-${position} ${className}`} role={'navigation'}>
+        <ul className={`nav ${position ? `nav-${position}` : ''} ${className ? className : ''}`} role={'navigation'}>
             {children}
         </ul>
     );

@@ -21,11 +21,11 @@ export default () => {
                     </Nav>
                 </Header>
 
-                <div className={'container'}>
+                <main>
                     <Route path={'/'} exact component={Home} />
                     <Route path={'/members'} component={Members} />
                     <Route path={'/about'} component={About} />
-                </div>
+                </main>
             </Router>
         </>
     );

@@ -7,7 +7,7 @@ type HeaderProps = {
 
 const Header: FC<HeaderProps> = ({className, children}) => {
     return (
-        <header className={`header ${className}`}>
+        <header className={`header ${className ? className : ''}`}>
             {children}
         </header>
     );

@@ -1,0 +1,16 @@
+html, body {
+  overflow: hidden;
+}
+
+.container-fluid {
+  position: absolute;
+  top: 40px;
+  left: 150px;
+  right: 0;
+  bottom: 0;
+  padding: 25px;
+}
+
+h5 {
+  border-bottom: 1px solid #333;
+}
