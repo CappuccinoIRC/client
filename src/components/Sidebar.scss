@@ -2,7 +2,7 @@
   width: 200px;
   height: calc(100vmin - 40px);
   background: #333;
-  z-index: 1;
+  position: relative;
 
   .nav {
     display: flex;
@@ -24,7 +24,6 @@
     border-top: none;
     cursor: pointer;
     user-select: none;
-    z-index: 1;
 
     &:hover, &:focus {
       background-color: #555;
@@ -35,7 +34,6 @@
     background-color: #ddd;
     color: #333;
     border: 1px solid #222;
-    z-index: 1;
 
     &:hover, &:focus {
       background-color: #fff;

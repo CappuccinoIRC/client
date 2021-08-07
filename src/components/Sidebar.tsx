@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
+import $ from 'jquery';
 
 export interface ISidebar {
     className?: string | undefined;
-    children?:  React.ReactNode;
+    children?: React.ReactNode;
 }
 
 export const Sidebar: FC<ISidebar> = ({className, children}) => {
