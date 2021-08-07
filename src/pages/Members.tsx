@@ -5,7 +5,8 @@ import { Nav, NavItem, Sidebar } from '../components';
 import './Members.scss';
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
 
-type MembersProps = {};
+export interface IMembers {
+}
 
 type Member = { id: number, name: string, group: number };
 type Group = { id: number, name: string };
@@ -17,7 +18,7 @@ type Group = { id: number, name: string };
     - Banning user.
     - Deleting user.
  */
-const Members: FC<MembersProps> = ({}) => {
+export const Members: FC<IMembers> = ({}) => {
     const [group, setGroup] = useState({id: 1, name: 'Users'} as Group);
     const [members, setMembers] = useState([] as Member[]);
 
@@ -26,13 +27,17 @@ const Members: FC<MembersProps> = ({}) => {
             <Router>
                 <Sidebar>
                     <Nav>
-                        <NavItem><a href={'#'} onClick={() => setGroup({
-                            id: 3,
-                            name: 'Administrators'
-                        })}>Administrators</a></NavItem>
-                        <NavItem><a href={'#'}
-                                    onClick={() => setGroup({id: 2, name: 'Moderators'})}>Moderators</a></NavItem>
-                        <NavItem><a href={'#'} onClick={() => setGroup({id: 1, name: 'Users'})}>Users</a></NavItem>
+                        <NavItem onClick={() => setGroup({id: 3, name: 'Administrators'})}>
+                            <span>Administrators</span>
+                        </NavItem>
+
+                        <NavItem onClick={() => setGroup({id: 2, name: 'Moderators'})}>
+                            <span>Moderators</span>
+                        </NavItem>
+
+                        <NavItem onClick={() => setGroup({id: 1, name: 'Users'})}>
+                            <span>Users</span>
+                        </NavItem>
                     </Nav>
                 </Sidebar>
 
@@ -63,5 +68,3 @@ const Members: FC<MembersProps> = ({}) => {
         </>
     );
 };
-
-export default Members;

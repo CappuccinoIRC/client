@@ -22,9 +22,9 @@ export default () => {
                 </Header>
 
                 <main>
-                    <Route path={'/'} exact component={Home} />
-                    <Route path={'/members'} component={Members} />
-                    <Route path={'/about'} component={About} />
+                    <Route path={'/'} exact component={Home}/>
+                    <Route path={'/members'} component={Members}/>
+                    <Route path={'/about'} component={About}/>
                 </main>
             </Router>
         </>

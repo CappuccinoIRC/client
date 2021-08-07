@@ -2,14 +2,12 @@ import React, { FC } from 'react';
 
 import './Home.scss';
 
-type HomeProps = {};
+export interface IHome {}
 
-const Home: FC<HomeProps> = ({}) => {
+export const Home: FC<IHome> = ({}) => {
     return (
         <>
             Home
         </>
     );
 };
-
-export default Home;

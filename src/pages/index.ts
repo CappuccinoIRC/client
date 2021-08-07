@@ -1,3 +1,7 @@
-export { default as Home } from './Home';
-export { default as Members } from './Members';
-export { default as About } from './About';
+export { Home } from './Home';
+export { Members } from './Members';
+export { About } from './About';
+
+export type { IHome } from './Home';
+export type { IMembers } from './Members';
+export type { IAbout } from './About';

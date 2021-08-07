@@ -1,16 +1,14 @@
 import React, { FC } from 'react';
 
-type HeaderProps = {
+export interface IHeader {
     className?: string | undefined;
     children?: React.ReactNode;
-};
+}
 
-const Header: FC<HeaderProps> = ({className, children}) => {
+export const Header: FC<IHeader> = ({className, children}) => {
     return (
         <header className={`header ${className ? className : ''}`}>
             {children}
         </header>
     );
 };
-
-export default Header;

@@ -2,14 +2,12 @@ import React, { FC } from 'react';
 
 import './About.scss';
 
-type AboutProps = {};
+export interface IAbout {}
 
-const About: FC<AboutProps> = ({}) => {
+export const About: FC<IAbout> = ({}) => {
     return (
         <>
             About
         </>
     );
 };
-
-export default About;

@@ -1,4 +1,9 @@
-export { default as Header } from './Header';
-export { default as Nav } from './Nav';
-export { default as NavItem } from './NavItem';
-export { default as Sidebar } from './Sidebar';
+export { Header } from './Header';
+export { Nav } from './Nav';
+export { NavItem } from './NavItem';
+export { Sidebar } from './Sidebar';
+
+export type { IHeader } from './Header';
+export type { INav } from './Nav';
+export type { INavItem } from './NavItem';
+export type { ISidebar } from './Sidebar';

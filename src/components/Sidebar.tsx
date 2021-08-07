@@ -1,16 +1,14 @@
 import React, { FC } from 'react';
 
-type SidebarProps = {
-    classes?: string | undefined;
-    children?: React.ReactNode;
-};
+export interface ISidebar {
+    className?: string | undefined;
+    children?:  React.ReactNode;
+}
 
-const Sidebar: FC<SidebarProps> = ({classes, children}) => {
+export const Sidebar: FC<ISidebar> = ({className, children}) => {
     return (
-        <aside className={`sidebar ${classes ? classes : ''}`}>
+        <aside className={`sidebar ${className ? className : ''}`}>
             {children}
         </aside>
     );
 };
-
-export default Sidebar;
