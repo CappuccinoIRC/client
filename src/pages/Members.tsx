@@ -68,7 +68,7 @@ export const Members: FC<IMembers> = ({}) => {
                 <div className={'container-fluid'}>
                     {selectedGroup && (
                         <>
-                            <Typography variant="h5">{selectedGroup.name} {selectedGroup.default ? <Badge color="primary" badgeContent={'Default'} style={{ marginLeft: '25px' }} /> : ''}</Typography>
+                            <Typography variant="h5">{selectedGroup.name} <Badge color="primary" badgeContent={selectedGroup.default ? 'Default' : 0} style={{ marginLeft: '25px' }} /></Typography>
 
                             <TableContainer>
                                 <Table>
