@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useRandom } from '../hooks';
 
 export interface ISidebar {
     className?: string | undefined;
@@ -8,21 +9,11 @@ export interface ISidebar {
 }
 
 export const Sidebar: FC<ISidebar> = ({collapsed= false, className, children}) => {
-    // const [, forceUpdate] = useReducer((x) => x + 1, 0);
-    
-    // useEffect(() => {
-    //     $('.nav-item span').each((index, element) => {
-    //         $(element).text($(element).text().substr(0, 1));
-    //     });
-    // }, [ collapsed ]);
-
-    // useEffect(() => {
-    //     forceUpdate();
-    // }, []);
+    const { id } = useRandom();
 
     return (
        <>
-           <aside className={`sidebar ${collapsed ? 'sidebar-collapsed' : ''} ${className ? className : ''}`} key={`sidebar-${Math.floor(Math.random() * 9999)}`}>
+           <aside className={`sidebar ${collapsed ? 'sidebar-collapsed' : ''} ${className ? className : ''}`} key={`sidebar-${id}`}>
                {children}
            </aside>
        </>

@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useRandom } from '../hooks';
 
 export interface IHeader {
     className?: string | undefined;
@@ -6,8 +7,10 @@ export interface IHeader {
 }
 
 export const Header: FC<IHeader> = ({className, children}) => {
+    const { id } = useRandom();
+
     return (
-        <header className={`header ${className ? className : ''}`} key={`header-${Math.floor(Math.random() * 9999)}`}>
+        <header className={`header ${className ? className : ''}`} key={`header-${id}`}>
             {children}
         </header>
     );

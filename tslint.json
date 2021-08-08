@@ -39,7 +39,7 @@
       true,
       {
         ".tsx": "pascal-case",
-        ".ts": "camel-case"
+        ".ts": "pascal-case"
       }
     ],
     "prefer-template": true,

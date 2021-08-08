@@ -28,9 +28,9 @@ type Group = { id: number, name: string, default?: boolean };
     - Deleting user.
  */
 export const Members: FC<IMembers> = ({}) => {
-    const [groups, setGroups] = useState([] as Group[]);
-    const [members, setMembers] = useState([] as Member[]);
-    const [selectedGroup, setSelectedGroup] = useState(undefined as Group | undefined);
+    const [groups, setGroups] = useState(() => [] as Group[]);
+    const [members, setMembers] = useState(() => [] as Member[]);
+    const [selectedGroup, setSelectedGroup] = useState(() => undefined as Group | undefined);
 
     useEffect(() => {
         setGroups([

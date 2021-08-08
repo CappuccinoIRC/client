@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useRandom } from '../hooks';
 
 export interface INav {
     position?: 'left' | 'middle' | 'right';
@@ -7,8 +8,10 @@ export interface INav {
 }
 
 export const Nav: FC<INav> = ({position, className, children}) => {
+    const { id } = useRandom();
+
     return (
-        <ul className={`nav ${position ? `nav-${position}` : ''} ${className ? className : ''}`} role={'navigation'} key={`nav-${Math.floor(Math.random() * 9999)}`}>
+        <ul className={`nav ${position ? `nav-${position}` : ''} ${className ? className : ''}`} role={'navigation'} key={`nav-${id}`}>
             {children}
         </ul>
     );

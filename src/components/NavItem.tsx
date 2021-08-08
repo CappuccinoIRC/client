@@ -1,5 +1,6 @@
 import React, { FC, useLayoutEffect } from 'react';
 import $ from 'jquery';
+import { useRandom } from '../hooks';
 
 export interface INavItem {
     className?: string | undefined;
@@ -10,17 +11,11 @@ export interface INavItem {
 }
 
 export const NavItem: FC<INavItem> = ({selected = false, onClick, className, children}) => {
-    function handleClick(event: any) {
-        $('.active').removeClass('active');
-        $(event.target).addClass('active');
-
-        if (onClick) {
-            onClick();
-        }
-    }
+    const { id } = useRandom();
 
     return (
-        <li className={`nav-item ${selected ? 'active' : ''} ${className ? className : ''}`} onClick={handleClick} key={`nav-item-${Math.floor(Math.random() * 9999)}`}>
+        <li className={`nav-item ${selected ? 'active' : ''} ${className ? className : ''}`}
+            onClick={onClick} key={`nav-item-${id}`}>
             {children}
         </li>
     );
