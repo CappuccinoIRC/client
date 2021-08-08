@@ -3,7 +3,16 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import { Nav, NavItem, Sidebar } from '../components';
 
 import './Members.scss';
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
+import {
+    Badge,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Typography
+} from '@material-ui/core';
 
 export interface IMembers {
 }
@@ -59,7 +68,7 @@ export const Members: FC<IMembers> = ({}) => {
                 <div className={'container-fluid'}>
                     {selectedGroup && (
                         <>
-                            <Typography variant="h5">{selectedGroup.name}</Typography>
+                            <Typography variant="h5">{selectedGroup.name} {selectedGroup.default ? <Badge color="primary" badgeContent={'Default'} style={{ marginLeft: '25px' }} /> : ''}</Typography>
 
                             <TableContainer>
                                 <Table>
