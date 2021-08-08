@@ -1,5 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
-import { INavItem, NavItem } from '.';
+import React, { FC } from 'react';
 
 export interface INav {
     position?: 'left' | 'middle' | 'right';
@@ -9,7 +8,7 @@ export interface INav {
 
 export const Nav: FC<INav> = ({position, className, children}) => {
     return (
-        <ul className={`nav ${position ? `nav-${position}` : ''} ${className ? className : ''}`} role={'navigation'}>
+        <ul className={`nav ${position ? `nav-${position}` : ''} ${className ? className : ''}`} role={'navigation'} key={`nav-${Math.floor(Math.random() * 9999)}`}>
             {children}
         </ul>
     );

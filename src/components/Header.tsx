@@ -7,7 +7,7 @@ export interface IHeader {
 
 export const Header: FC<IHeader> = ({className, children}) => {
     return (
-        <header className={`header ${className ? className : ''}`}>
+        <header className={`header ${className ? className : ''}`} key={`header-${Math.floor(Math.random() * 9999)}`}>
             {children}
         </header>
     );

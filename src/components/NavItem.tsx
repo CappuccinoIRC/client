@@ -20,7 +20,7 @@ export const NavItem: FC<INavItem> = ({selected = false, onClick, className, chi
     }
 
     return (
-        <li className={`nav-item ${selected ? 'active' : ''} ${className ? className : ''}`} onClick={handleClick}>
+        <li className={`nav-item ${selected ? 'active' : ''} ${className ? className : ''}`} onClick={handleClick} key={`nav-item-${Math.floor(Math.random() * 9999)}`}>
             {children}
         </li>
     );

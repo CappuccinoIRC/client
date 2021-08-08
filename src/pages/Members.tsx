@@ -58,7 +58,7 @@ export const Members: FC<IMembers> = ({}) => {
                 <Sidebar>
                     <Nav>
                         {groups.sort((a, b) => b.id - a.id).map((group) => (
-                            <NavItem onClick={() => setSelectedGroup(group)} selected={selectedGroup && group.id === selectedGroup.id}>
+                            <NavItem onClick={() => setSelectedGroup(group)} selected={selectedGroup && group.id === selectedGroup.id} key={group.id}>
                                 <span>{group.name}</span>
                             </NavItem>
                         ))}
@@ -81,11 +81,11 @@ export const Members: FC<IMembers> = ({}) => {
 
                                     <TableBody>
                                         {members.length > 0 && members.filter((member) => member.group === selectedGroup.id).map((member) => (
-                                            <TableRow>
+                                            <TableRow key={member.id}>
                                                 <TableCell>{member.id}</TableCell>
                                                 <TableCell>{member.name}</TableCell>
                                             </TableRow>
-                                        )) || <TableRow><TableCell>There are currently no users.</TableCell></TableRow>}
+                                        )) || <TableRow key={-1}><TableCell>There are currently no users.</TableCell></TableRow>}
                                     </TableBody>
                                 </Table>
                             </TableContainer>
