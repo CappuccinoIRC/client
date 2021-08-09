@@ -10,8 +10,11 @@ export interface INav {
 export const Nav: FC<INav> = ({position, className, children}) => {
     const { id } = useRandom();
 
+    // @ts-ignore
+    className = position && `nav-${position}`;
+
     return (
-        <ul className={`nav ${position ? `nav-${position}` : ''} ${className ? className : ''}`} role={'navigation'} key={`nav-${id}`}>
+        <ul className={`nav ${className ? className : ''}`.trim()} role={'navigation'} key={`nav-${id}`}>
             {children}
         </ul>
     );

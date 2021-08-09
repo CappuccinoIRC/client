@@ -13,8 +13,11 @@ export interface INavItem {
 export const NavItem: FC<INavItem> = ({selected = false, onClick, className, children}) => {
     const { id } = useRandom();
 
+    // @ts-ignore
+    className = selected && 'active';
+
     return (
-        <li className={`nav-item ${selected ? 'active' : ''} ${className ? className : ''}`}
+        <li className={`nav-item ${className ? className : ''}`.trim()}
             onClick={onClick} key={`nav-item-${id}`}>
             {children}
         </li>

@@ -11,9 +11,12 @@ export interface ISidebar {
 export const Sidebar: FC<ISidebar> = ({collapsed= false, className, children}) => {
     const { id } = useRandom();
 
+    // @ts-ignore
+    className = collapsed && 'sidebar-collapsed';
+
     return (
        <>
-           <aside className={`sidebar ${collapsed ? 'sidebar-collapsed' : ''} ${className ? className : ''}`} key={`sidebar-${id}`}>
+           <aside className={`sidebar ${className ? className : ''}`.trim()} key={`sidebar-${id}`}>
                {children}
            </aside>
        </>

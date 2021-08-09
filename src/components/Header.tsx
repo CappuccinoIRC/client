@@ -10,7 +10,7 @@ export const Header: FC<IHeader> = ({className, children}) => {
     const { id } = useRandom();
 
     return (
-        <header className={`header ${className ? className : ''}`} key={`header-${id}`}>
+        <header className={`header ${className ? className : ''}`.trim()} key={`header-${id}`}>
             {children}
         </header>
     );
