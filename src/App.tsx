@@ -7,7 +7,8 @@ import './App.scss';
 import { useSocket } from './hooks';
 
 export default () => {
-    const socket = useSocket('ws://127.0.0.1:3001');
+    // @ts-ignore
+    const socket = useSocket(process.env.REACT_APP_SERVER_URL);
 
     socket.addEventListener('connection', () => {
         socket.send('Hello World!');
