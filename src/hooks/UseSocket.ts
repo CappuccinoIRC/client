@@ -1,7 +1,5 @@
-import { io } from 'socket.io-client';
-
 const useSocket = (url: string) => {
-    return io(url);
+    return new WebSocket(url);
 };
 
 export default useSocket;
