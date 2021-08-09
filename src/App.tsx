@@ -4,8 +4,15 @@ import { Header, Nav, NavItem } from './components';
 import { About, Home, Members } from './pages';
 
 import './App.scss';
+import { useSocket } from './hooks';
 
 export default () => {
+    const socket = useSocket('ws://127.0.0.1:3001');
+
+    socket.on('connect', () => {
+        socket.send('Hello World!');
+    });
+
     return (
         <>
             <Router>
