@@ -5,13 +5,31 @@ import { About, Home, Members } from './pages';
 
 import './App.scss';
 import { useSocket } from './hooks';
+import { WebSocketStatus } from './hooks/UseSocket';
 
 export default () => {
     // @ts-ignore
-    const socket = useSocket(process.env.REACT_APP_SERVER_URL);
+    const ws = useSocket(process.env.REACT_APP_SERVER_URL);
 
-    socket.addEventListener('connection', () => {
-        socket.send('Hello World!');
+    ws.addEventListener('open', (ev) => {
+        // @ts-ignore
+        console.log('Opened', { url: ws.url, status: WebSocketStatus[ws.readyState] });
+
+        ws.send('Hello');
+    });
+
+    ws.addEventListener('error', (ev) => {
+        if (ws.readyState !== ws.CLOSED) {
+            ws.close();
+        }
+    });
+
+    ws.addEventListener('message', (ev) => {
+        console.log('Messaged', { data: ev.data });
+    });
+
+    ws.addEventListener('close', (ev) => {
+        console.error('Closed', { code: ev.code, reason: ev.reason });
     });
 
     return (
